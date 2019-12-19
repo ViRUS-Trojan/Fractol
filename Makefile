@@ -6,7 +6,7 @@
 #    By: vdelsie <vdelsie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/15 18:49:15 by vdelsie           #+#    #+#              #
-#    Updated: 2019/12/15 18:50:39 by vdelsie          ###   ########.fr        #
+#    Updated: 2019/12/19 19:34:17 by vdelsie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,8 @@ SRCS_DIR = ./
 INCLUDES = ./includes/
 RM = /bin/rm -f
 
-FILES = 
+FILES = choose_fractol color fractal_utils \
+		fractal_escepe_time 
 CFILES = $(patsubst %, $(SRCS_DIR)%.c, $(FILES))
 OFILES = $(patsubst %, %.o, $(FILES))
 CFLAGS = -Wall -Wextra -Werror -O2 -funroll-loops
