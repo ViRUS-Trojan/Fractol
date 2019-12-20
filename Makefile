@@ -5,13 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vdelsie <vdelsie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/12/15 18:49:15 by vdelsie           #+#    #+#              #
-#    Updated: 2019/12/19 19:34:17 by vdelsie          ###   ########.fr        #
+#    Created: 2019/12/20 18:48:07 by vdelsie           #+#    #+#              #
+#    Updated: 2019/12/20 18:48:47 by vdelsie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 MLX_BASEDIR = ./minilibx/
-
 
 # определить ОС для определения версии mlx для использования ...
 TARGETOS := $(shell uname -s)
@@ -45,12 +44,14 @@ ifeq ($(TARGETOS), Darwin)
 endif
 
 NAME = fractol
-SRCS_DIR = ./
+##SRCS_DIR = ./
 INCLUDES = ./includes/
 RM = /bin/rm -f
 
-FILES = choose_fractol color fractal_utils \
-		fractal_escepe_time 
+FILES = main fractal_utils image choose_fractal render color\
+fractal_escape_time\
+fractal_funcs fractal_setup_0 fractal_setup_1\
+mouse_hooks key_hooks loop_hooks
 CFILES = $(patsubst %, $(SRCS_DIR)%.c, $(FILES))
 OFILES = $(patsubst %, %.o, $(FILES))
 CFLAGS = -Wall -Wextra -Werror -O2 -funroll-loops

@@ -6,7 +6,7 @@
 /*   By: vdelsie <vdelsie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/19 17:01:00 by vdelsie           #+#    #+#             */
-/*   Updated: 2019/12/19 18:41:26 by vdelsie          ###   ########.fr       */
+/*   Updated: 2019/12/20 18:47:42 by vdelsie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,14 @@ t_dcmplx	abs_sqr(t_dcmplx z)
 
 t_fractal	calc_fract_min_max(t_envars *env, t_fractal f)
 {
-	
+	double	x_wid;
+	double	y_wid;
+
+	x_wid = f.x_wid / env->f.z_factor;
+	y_wid = f.y_wid / env->f.z_factor;
+	f.x_min = f.x_cent + env->x_t - x_wid * (env->mouse.x_ratio);
+	f.x_max = f.x_cent + env->x_t + x_wid * (1 - env->mouse.x_ratio);
+	f.y_min = f.y_cent + env->y_t - y_wid * (env->mouse.y_ratio);
+	f.y_max = f.y_cent + env->y_t + y_wid * (1 - env->mouse.y_ratio);
+	return (f);
 }
