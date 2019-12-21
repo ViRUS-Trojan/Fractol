@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vdelsie <vdelsie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/12/20 18:48:07 by vdelsie           #+#    #+#              #
-#    Updated: 2019/12/20 18:48:47 by vdelsie          ###   ########.fr        #
+#    Created: 2019/12/21 18:00:01 by vdelsie           #+#    #+#              #
+#    Updated: 2019/12/21 19:40:00 by vdelsie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,13 +44,13 @@ ifeq ($(TARGETOS), Darwin)
 endif
 
 NAME = fractol
-##SRCS_DIR = ./
+SRCS_DIR = ./
 INCLUDES = ./includes/
 RM = /bin/rm -f
 
 FILES = main fractal_utils image choose_fractal render color\
-fractal_escape_time\
-fractal_funcs fractal_setup_0 fractal_setup_1\
+		fractal_escape_time\
+fractal_funcs fractal_setup_0\
 mouse_hooks key_hooks loop_hooks
 CFILES = $(patsubst %, $(SRCS_DIR)%.c, $(FILES))
 OFILES = $(patsubst %, %.o, $(FILES))
